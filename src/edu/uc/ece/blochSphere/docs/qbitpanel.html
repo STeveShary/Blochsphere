@@ -1,0 +1,56 @@
+<html>
+<p>The qubit panel allows the user to control the state of the qubit and also apply elementary operators on it.</p>
+<p><center><image src="images/qbit_state_panel.png"/></center></p>
+<h2>Selecting a qubit</h2>
+To view and modify the state of qubit, select the tab on the left side of panel.  The image above 
+shows the qubits one through ten.  To identify which qubit tab maps to the arrow in the bloch sphere, 
+you will see that the control panel is surrounded by a different color for each qubit.  The color for
+each qubit will map to that surrounding color.</p>
+
+<h2>Hiding and showing qubits</h2>
+<p>The simulator allows for multiple qubits to be displayed.  By default the application starts will all
+of the qubits visible.  To hide all qubits, click on the "Hide All" button.  To show all qubits, click on the "Show all"
+button.  Each qubit tab has a control to hide or display the qubit.  It is a check box in the lower center of the
+qubit tab.  The check box is labelled "display".  If the box is checked then the qubit is visible.</p>
+
+<h2>Changing the qubit value</h2>
+<p>
+When using the simulator, you have the ability to measure the current state of the qubit
+(without destroying it)! You also have the ability to manipulate the state to see how an
+operator, or series of operators will aect the state of the qubit. Figure above shows the
+control panel.</p>
+
+<p>There are three ways that the qubit state can be change: by manually typing in the theta 
+and phi angles (in degrees), adjusting the slider values of the angles, or entering the 
+&alpha; and &beta; values. Whenever the state of the qubit is modifed by using one control, 
+it will update the values in the other controls. Changing the angle using the slider will 
+update the text value of the angle and also the &alpha; and &beta; values. As stated before, 
+one the ways to change the qubit state is to use the sliders on the qubit control panel. The 
+theta value can vary from 0 to 180 degrees. The theta angle is the angle between the positive 
+z axis or the j0i state and the qubit. When the user enters a new value and then changes the 
+focus of the text field by hitting the tab key, or by using the mouse to change the focus by 
+clicking on another component, the application will update the qubit state using the new angle
+ to set the qubit state. If the user enters a value that is outside of the range of 0 to 180, 
+ then the application will reset the value back to the previous value.  The user can also 
+ change the phi angle. The phi angle is the angle between the positive x axis and the projections 
+ of the qubit in the (x, y) plane. Phi varies between 0 to 360 degrees. Again, to change the 
+values by manually entering the numeric value, the tab key must be hit, or transfer focus to 
+another part of the application to have the value take effect.</p>
+
+<p>The second method to change the qubit state is by using the sliders. A slider works by
+having the user select the slider, by tabbing to it, or by clicking on it. The value can be
+changed by dragging the slider marker left and right using the mouse, or by using the left
+and right arrow keys to adjust the value by one increment. As the slider changes value, the
+qubit state will be immediately modified and displayed on the Bloch sphere.
+The third method to change the qubit value is by modifying the alpha and beta values of
+the qubit. The alpha and beta fields can have complex numbers entered into either field. If
+a field is left blank, the application will assume that it has a value of zero. When both values
+have been changed in the two text fields, the value can be updated by pressing the "Update
+Value" button. </p>
+
+<p>Setting the qubit value through this control can be the most precise, but also
+the most tricky. The simulator will adjust the value if it is not normalized. Remember that
+the &alpha; and the &beta; values must adhere to the equation: |&alpha;|<sup>2</sup> + |&beta;|<sup>2</sup> = 1. 
+Secondly, if a complex number is entered to the alpha value, it will be changed to a real number by multiplying
+both the &alpha; and the &beta; values by the complex conjugate of &alpha;.</p>
+</html>

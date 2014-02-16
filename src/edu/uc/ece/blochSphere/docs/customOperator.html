@@ -1,0 +1,24 @@
+<html>
+<p>The custom operator allows the user to use popular operators or custom operators to change the state of the qubit.</p>
+<p><center><image src="images/customOperator.png"/></center></p>
+
+<h2>Applying an operator</h2>
+<p>The panel has a 2x2 matrix input to allow the user to enter an operator manually, or populate it using the popular
+quantum operators on the right.  When the operator is input, the user can have the operator act on the qubits by
+hitting either the "Apply To Visible Qubits" button or by clicking on the "Apply To All Qubits" button.  The buttons
+will apply the operator on each qubit individually.  Clicking on the button multiple times will cause the operator to
+act on the qubits multiple times.  Some operators are Hermitian (X, Y, Z, H for example) and if applied twice will return
+the qubit to its original state after using the operator twice.</p>
+
+<h2>Using a popular operator</h2>
+<p>As seen in the image above, the custom operator allows the user to populate the X, Y, Z, H, S or T operator.
+Clicking on these buttons will cause the operator values to be filled into the 2x2 matrix.</p>
+<p> Clicking on the rotation buttons R<sub>x</sub>(&theta;), R<sub>y</sub>(&theta;), or R<sub>z</sub>(&theta;) will
+prompt the user to enter the angle (in degrees) to rotate the qubit around the applicable axis.  Once the angle
+is entered, the operator values will be populated.</p>
+
+<h2>Setting the operator values manually</h2>
+<p>The operator values can be set manually.  They must form a unitary operator.  If the values do not create a unitary
+operator, then the user will get an error when applying the operator to the qubits.  The individual values must be a
+decimal number.</p>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<p>The Larmor precession panel allows the user to apply a magnetic field to the qubit and view the evolution
+of the qubit state.</p>
+<p><center><img src="images/rabiPanel.png"/></center></p>
+<p>
+The Rabi Field tab allows the user to see how the state of qubit is affected by two magnetic
+fields. The one rotates around the z-axis, on the x-y plane pointing towards the origin, and
+the second is a field the magnetic field along the z-axis that points from toward to the origin
+from Z+. There are three sliders on the tab when selecting the Rabi Field. Figure 3.17
+shows the control tab on the simulator. The first slider is the B<sub>z</sub> value which is the strength
+of the magnetic field that is along the z-axis. Adjusting this from low to high will make
+the qubit rotate around the z-axis at a faster pace. The second slider controls the strength
+of the perpendicular magnetic field that is rotating around the z-axis, along the x-y plane.
+Increasing the value of the slider will cause the qubit to rotate at a higher speed around
+the rotating magnetic field. This can be difficult to see if the magnetic field is rotating at
+a higher speed and also if the strength of the B<sub>z</sub> is high (relatively speaking). The final
+slider controls the angular velocity (&omega;) for the B<sub>perp</sub> magnetic field around the z-axis. This
+is measured in radians/second.
+</p>
+<p>There is a check box that allows the simulator to match the speed of the rotation of the
+B<sub>perp</sub> to the Larmor frequency. This is the frequency at which the combined force of B<sub>perp</sub>
+and B<sub>z</sub> are matched in such a way that the B<sub>z</sub> pushes the qubit around the z-axis at the
+same speed of the B<sub>perp</sub> magnetic field causing it to "
+ip" or move from the Z+ and Z- poles.
+When the user checks this check box, the simulator will calculate the correct value of &omega; and
+will change it correctly. If the B<sub>z</sub> value is changed, the &omega; value will be updated accordingly.
+The last control does not affect the simulation of the Rabi Field, but it allows the user
+to view the path of the qubit, affected by the two magnetic fields. When the user clicks on
+the button "Show Trail", it will become depressed and the length of the trail, or previous
+states of the qubit will be shown. Because of computing constraints, the trail is limited and 
+will continually follow the path of the qubit.</p>
+
+<p>To start the effects of the Rabi field, click on the "Start" button. This will apply the two
+magnetic fields on only the visible qubits in the simulator. If the slider values are changed,
+they will take effect immediately. One this to note is that the effect of the magnetic fields is
+the change in the qubit from its original state. Changing the slider may cause the qubit(s)
+to move in a sudden or jerky motion. This is the because the the calculation of the current
+qubit state is the effect of the magnetic field with the spinor values applied from the start
+time to the current time. If there are problems viewing the trail of the spinor, it may be
+best to "hide" the trail of the qubit and then "show" it later after the spinor values have
+been set.</p>
+
+<p>Lastly, the probability that the qubit will "flip" from the north and south, along the
+z-axis pole when matching &omega; to the Larmor frequency is greatest when the qubit starts at
+the state of |1> or |0>. The simulator will assume that the starting state of the qubit is its
+current state when the "Start" button is hit. If the Rabi Field simulation is stopped and
+started multiple times, each time it is started, the simulator will assume that the original
+state of the qubit is the last place that the Rabi Field stopped it. This means that the Rabi
+field cannot be paused. Since the starting state affects the overall path of the qubit, the
+qubit must be put at the original state to replay the same evolution.</p>
+</html>

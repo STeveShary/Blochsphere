@@ -1,0 +1,55 @@
+<html>
+<p>The record/playback functionality allows users to record a sequence of operators that act
+upon the qubit states. The recording function allows the user to use the custom operator to
+create operators and have them act on the qubits. As they are applied to the qubits, they
+are recorded in the order that they are applied. The recorded operators can then be saved
+to a file for playback later. The playback functionality allows the user to load a saved file
+and then "play" or have the operators applied to the qubit state in the same order that they
+were recorded. The speed at which the operators are applied can be varied and the user can
+choose to individually step through each operator.</p>
+
+<p>When the user clicks on the "Record/Playback" tab, the first screen that comes up allows
+the user to decide to record a series of operators, or play them back. This is seen in figure below.</p>
+<p><center><img src="images/recordPlaybackTab.png"></center></p>
+
+<p>When the user clicks on the record screen, the qubit state panel is replaced with the
+record panel and the only tab that is available on the bottom left is the "Custom Operator"
+tab. At this point, the simulator is in recording mode and any operator that is applied to
+the qubits will be recorded on the top left record panel. The figure below shows the default state
+with the recording panel on the top and the custom operator panel on the bottom.</p>
+<p><center><img src="images/recordScreen.png"></center></p>
+<p>As the operators are applied to the qubits, the record panel will show the value of the
+operator. The operator at the top of the list is the first operator that is applied. Each
+operator applied after that will appear below in the order that they are applied to the
+qubits. The Custom operator tab at the bottom works in the same manner when applying
+an operator to a qubit state. When all the desired operators have been recorded, the user
+can save the recorded operators by clicking on the "Save" button in the record panel. This
+will bring up a file explorer dialog to choose the file name and location.</p>
+
+<p>The second part of functionality described is the playback function. When the user clicks
+on "Playback", they will have to select a file to playback. Currently, the user must select a
+file that has the extension ".bso". This stands for Bloch Sphere operators. When a file has
+been selected, the playback tab will be displayed in the bottom right. The figure below shows
+the state of the playback after a file has been loaded.</p>
+<p><center><img src="images/playbackScreen.png"></center></p>
+
+
+<p>After the recorded operators have been loaded, there are several things that can be done
+to play back the operators. The first is the delay. The user can set the delay between the
+acting on the qubits. The standard delay is half a second. That means that the application
+will wait one half of a second between applying the current operator and the next operator.
+The delay can be changed as long as the application is not playing back the operators. To
+start the playback, the user should click the "Play" button. This will apply the first operator
+and then wait the delay before applying the next operator and continuing on. At any time,
+the user can pause the playback by hitting the "Pause" button. The pause button is only
+enabled though when the operators are being played back. Additionally, if the playback
+is paused, then the user can manually step through each of the operators by hitting the
+"Step" button. This will apply the next operator in the playback sequence. The operator 
+application sequence can be set back to the first operator by hitting the "Restart" button.
+When playback is finished, the user should click the "End Playback" to return to the normal
+simulator functionality. The record playback function allows users to view visually the evolution of the qubits
+as quantum operators are acted on them. The record and playback functionality gives the
+user the flexibility to apply any number of operators without restriction on the operators
+themselves. The simple format of the saved file also allows the user to translate the output
+of other applications to the Bloch sphere simulator to view that effect.</p>
+</html>
