@@ -25,3 +25,7 @@ run the command:
 ```shell
 ./gradlew run
 ``` 
+
+## Running a pre-built version
+
+The prebuilt version is available [here](bloch3dapp.zip)
