@@ -8,12 +8,13 @@ repositories {
 }
 
 dependencies {
-
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     implementation files('deploy/linux-64/lib/ext/j3dcore.jar')
     implementation files('deploy/linux-64/lib/ext/j3dutils.jar')
     implementation files('deploy/linux-64/lib/ext/vecmath.jar')
 }
+
+run.doFirst { environment "LD_LIBRARY_PATH", "./deploy/linux-64/lib/amd64"}
 
 application {
     mainClass = "edu.uc.ece.blochSphere.BlochApplication"
