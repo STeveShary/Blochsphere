@@ -151,12 +151,12 @@ public class Bloch3D implements IBlochConstants, ActionListener {
      */
     public JPanel buildTabbedPanePanel() {
 	JPanel tabbedPanel = new JPanel();
-	tabbedPanel.setPreferredSize(new Dimension(400, 350));
-	tabbedPanel.setMinimumSize(new Dimension(400, 350));
+	tabbedPanel.setPreferredSize(new Dimension(550, 430));
+	tabbedPanel.setMinimumSize(new Dimension(550, 430));
 	tabbedPanel.setLayout(null);
 	transformTabbedPane = new JTabbedPane();
 	transformTabbedPane.setTabPlacement(JTabbedPane.TOP);
-	transformTabbedPane.setBounds(0, 0, 400, 350);
+	transformTabbedPane.setBounds(0, 0, 550, 450);
 	tabbedPanel.add(transformTabbedPane);
 	qubitOperator = new QubitOperator(visibleQubits);
 

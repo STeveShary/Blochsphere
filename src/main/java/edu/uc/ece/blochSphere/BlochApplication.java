@@ -23,7 +23,7 @@ public class BlochApplication {
 	    JFrame blochFrame = new JFrame();
 	    Bloch3D blochSim = new Bloch3D(blochFrame.getContentPane());
 	    blochFrame.setTitle("Bloch Sphere Simulator");
-	    blochFrame.setSize(1000, 800);
+	    blochFrame.setSize(1200, 900);
 	    blochFrame.setLocation(0, 0);
 	    blochFrame.setResizable(false);
 	    blochFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
