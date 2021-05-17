@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    implementation files('deploy/linux-64/lib/ext/j3dcore.jar')
+    implementation files('deploy/linux-64/lib/ext/j3dutils.jar')
+    implementation files('deploy/linux-64/lib/ext/vecmath.jar')
+}
+
+application {
+    mainClass = "edu.uc.ece.blochSphere.BlochApplication"
+}
+
+tasks.register("copyJar", Copy) {
+    dependsOn tasks.copyDeployFiles, tasks.jar
+    from "$buildDir/libs/Blochsphere.jar"
+    into "$buildDir/deploy/libs/"
+}
+
+tasks.register("copyDeployFiles", Copy) {
+    from "deploy"
+    into "$buildDir/deploy"
+}
+
+tasks.register("deploy", Zip) {
+    dependsOn tasks.copyDeployFiles, tasks.copyJar
+    archiveFileName = "bloch3dapp.zip"
+    destinationDirectory = file("$buildDir/dist")
+
+    from "$buildDir/deploy"
+}

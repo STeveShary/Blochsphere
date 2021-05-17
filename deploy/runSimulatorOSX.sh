@@ -1,13 +1,13 @@
+#!/bin/bash
+J3D_HOME=osx-x86
 
-setenv J3D_HOME=/osx-x86
+DYLD_FALLBACK_LIBRARY_PATH=${J3D_HOME}/jogl/lib
 
-export DYLD_LIBRARY_PATH=${J3D_HOME}/jogl/lib
+CLASSPATH=./libs/Blochsphere.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dcore.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dutils.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/vecmath.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/jogl/lib/jogl.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/jogl/lib/gluegen-rt.jar
 
-export CLASSPATH=./lib/bloch3d.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dcore.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dutils.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/vecmath.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/jogl/lib/jogl.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/jogl/lib/gluegen-rt.jar
-
-java edu.uc.ece.blochSphere.BlochApplication
+java --class-path $CLASSPATH edu.uc.ece.blochSphere.BlochApplication

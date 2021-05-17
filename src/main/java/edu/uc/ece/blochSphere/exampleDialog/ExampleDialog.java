@@ -165,7 +165,7 @@ public abstract class ExampleDialog implements ActionListener, Runnable,
      */
     public void setPage(String htmlPageName) {
 	try {
-	    exampleEditorPane.setPage(DocumentationDialog.class
+	    exampleEditorPane.setPage(this.getClass().getClassLoader()
 		    .getResource("docs/" + htmlPageName));
 	} catch (IOException e) {
 	    e.printStackTrace();

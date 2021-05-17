@@ -66,8 +66,7 @@ public class DocumentationDialog implements IBlochDialog {
 	m_documentString = documentationPage;
 	if (m_documentationPane != null) {
 	    try {
-		m_documentationPane.setPage(DocumentationDialog.class
-			.getResource("docs/" + documentationPage));
+		m_documentationPane.setPage(this.getClass().getClassLoader().getResource("docs/" + documentationPage));
 	    } catch (IOException e) {
 		e.printStackTrace();
 	    }

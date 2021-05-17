@@ -1,13 +1,13 @@
 #!/bin/bash
-setenv J3D_HOME=/linux-64
+J3D_HOME=linux-64
 
-export LD_LIBRARY_PATH=${J3D_HOME}/lib/i386
+LD_LIBRARY_PATH=${J3D_HOME}/lib/amd64
 
-export CLASSPATH=./lib/bloch3d.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dcore.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dutils.jar
-export CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/vecmath.jar
+CLASSPATH=./libs/Blochsphere.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dcore.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/j3dutils.jar
+CLASSPATH=${CLASSPATH}:${J3D_HOME}/lib/ext/vecmath.jar
 
-java edu.uc.ece.blochSphere.BlochApplication
+java --class-path $CLASSPATH edu.uc.ece.blochSphere.BlochApplication
 
 
