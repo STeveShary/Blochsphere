@@ -80,6 +80,7 @@ public class Bloch3D implements IBlochConstants, ActionListener {
     protected Qubit sumQbit;
     protected int selectedQbit = 0;
     protected Qubit magFieldArrow;
+    protected Canvas3D threeDWorld;
 
     // Constructor
     public Bloch3D(Container contentPane) {
@@ -90,7 +91,8 @@ public class Bloch3D implements IBlochConstants, ActionListener {
 	qBitControlPanel.setBorder(eborder);
 	qBitControlPanel.setLayout(new BoxLayout(qBitControlPanel,
 		BoxLayout.Y_AXIS));
-	this.contentPane.add(create3DWorld(), BorderLayout.CENTER);
+	this.threeDWorld = create3DWorld();
+	this.contentPane.add(this.threeDWorld, BorderLayout.CENTER);
 	this.contentPane.add(qBitControlPanel, BorderLayout.EAST);
 	qBitControlPanel.add(javax.swing.Box.createVerticalStrut(5));
 	for (int i = 0; i < NUM_QBITS; ++i) {
@@ -238,8 +240,21 @@ public class Bloch3D implements IBlochConstants, ActionListener {
     }
 
     public void resetView() {
-	this.viewingTransformGroup.setTransform(getResetView());
+		this.viewingTransformGroup.setTransform(getResetView());
     }
+
+    public void nudgeView() {
+		Transform3D view = getResetView();
+		view.rotX(0.1);
+		for(int i =0; i < 3; i++) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException ignored) {			}
+			view.rotX(Math.PI * 2);
+			this.viewingTransformGroup.setTransform(view);
+		}
+		this.resetView();
+	}
 
     public BranchGroup setLights(BranchGroup bg, Color3f ambcol,
 	    Color3f dir1col, Color3f dir2col) {

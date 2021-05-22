@@ -30,6 +30,7 @@ public class BlochApplication {
 	    BlochMenuBar menuBar = new BlochMenuBar(blochSim);
 	    blochFrame.setJMenuBar(menuBar.getMenuBar());
 	    blochFrame.setVisible(true);
+		blochSim.nudgeView();
 	}
     }
 

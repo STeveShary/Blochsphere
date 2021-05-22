@@ -14,7 +14,21 @@ dependencies {
     implementation files('deploy/linux-64/lib/ext/vecmath.jar')
 }
 
-run.doFirst { environment "LD_LIBRARY_PATH", "./deploy/linux-64/lib/amd64"}
+
+application {
+    if (System.properties['os.name'].toLowerCase().contains('linux')) {
+        environment "LD_LIBRARY_PATH", "./deploy/linux-64/lib/amd64"
+    } else if(System.properties['os.name'].toLowerCase().contains('windows')){
+        applicationDefaultJvmArgs  = ['-Djava.library.path=deploy/windows-64/bin']
+    }
+}
+
+run.doFirst {
+    if (System.properties['os.name'].toLowerCase().contains('linux')) {
+        environment "LD_LIBRARY_PATH", "./deploy/linux-64/lib/amd64"
+    } else if(System.properties['os.name'].toLowerCase().contains('windows')){
+        environment "java.library.path", "deploy/windows-64/bin"
+    }}
 
 application {
     mainClass = "edu.uc.ece.blochSphere.BlochApplication"
